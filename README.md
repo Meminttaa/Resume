@@ -1,5 +1,5 @@
 <div id="header" align="center">
-  <img src="https://github.com/public/moarcats/blob/master/cats/93.gif"/>
+  <img src="https://github.com/public/moarcats/blob/master/cats/0p5Tk.gif"/>
 </div>
 
 <h1 tabindex="-1" class="heading-element" dir="auto">Проекты</h1>
