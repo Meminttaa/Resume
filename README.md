@@ -40,7 +40,7 @@
 <h1 tabindex="-1" class="heading-element" dir="auto">Задания</h1>
 <ul dir="auto">
 <li>
-<p dir="auto">ВПР - </p>
+<p dir="auto">ВПР - https://docs.google.com/document/d/1sLGkcQ3EOlnycn5ZS6SISxddtSaOWyzMCED7FAENrY4/edit?usp=sharing </p>
 </li>
 <li>
 <p dir="auto">Практикум - https://docs.google.com/document/d/13rCXcS0bvQG-hyjqxW5fAc8Yy1MY7g_H6aZDURFssVs/edit?usp=sharing </p>
