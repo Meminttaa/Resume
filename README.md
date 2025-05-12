@@ -27,13 +27,13 @@
 <h1 tabindex="-1" class="heading-element" dir="auto">Теория</h1>
 <ul dir="auto">
 <li>
-<p dir="auto">База данных - </p>
+<p dir="auto">База данных - https://docs.google.com/document/d/1KYMbko5C4RJKan39T7v3B0l_3xPdbDNNPJRN7qHMsOc/edit?usp=sharing </p>
 </li>
 <li>
-<p dir="auto">История операционных систем - </p>
+<p dir="auto">История операционных систем - https://docs.google.com/document/d/1wapcIaBCrFW3MIDV8shgt2J3JbwGlMecwyea_dgfY8E/edit?usp=sharing </p>
 </li>
 <li>
-<p dir="auto">GIT алгоритмизация - </p>
+<p dir="auto">GIT алгоритмизация - https://docs.google.com/document/d/1E6jp7QAbC20bU_zmhDmPrfowaiwAebbGM6l19FxLpMc/edit?usp=sharing</p>
 </li>
 </ul>
 
