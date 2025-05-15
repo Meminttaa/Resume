@@ -11,7 +11,7 @@
 <p dir="auto">Создание документов с использованием Python'а - https://drive.google.com/drive/folders/1MrE5Nb0hmGagHzZy5nJ6jS9zlHK10sYR?usp=sharing</p>
 </li>
 <li>
-<p dir="auto">TG бот - </p>
+<p dir="auto">TG бот - https://drive.google.com/drive/folders/1jVp1wUf9GMcNxOr4BDL-wGa73lRF5w5o?usp=sharing </p>
 </li>
 </ul>
 
