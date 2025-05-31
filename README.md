@@ -2,6 +2,9 @@
   <img src="https://github.com/public/moarcats/blob/master/cats/0p5Tk.gif"/>
 </div>
 
+<li>
+<p dir="auto">Курсовой проект - https://drive.google.com/drive/folders/1jkq4V5d-y88YkaEuwTmtkrlPMNUaMLTF?usp=sharing</p>
+</li>
 <h1 tabindex="-1" class="heading-element" dir="auto">Проекты</h1>
 <ul dir="auto">
 <li>
