@@ -49,7 +49,6 @@
 💡 К слову: В интерфейс добавлена скрытая мини-игра (Aim-тренер) на Tkinter.
 Можно покликать по убегающим квадратам и немного отвлечься, пока ИИ обрабатывает тяжелые файлы.
 
-
 ---
 
 ## 📂 Проекты
@@ -166,12 +165,13 @@ erDiagram
         string predicted_category
         timestamp created_at
     }
-💾 История операционных систем
-🔄 GIT алгоритмизация
-📝 Задания
-📋 ВПР
-🔧 Практикум
-🎬 Сообщение по фильму
+```
+💾 [История операционных систем](https://docs.google.com/document/d/1wapcIaBCrFW3MIDV8shgt2J3JbwGlMecwyea_dgfY8E/edit?usp=sharing)
+🔄 [GIT алгоритмизация](https://docs.google.com/document/d/1E6jp7QAbC20bU_zmhDmPrfowaiwAebbGM6l19FxLpMc/edit?usp=sharing)
+📝 [Задания]([https://адрес-твоего-сайта.com](https://docs.google.com/document/d/1qvPODCwo4qyHlzpF2eT9-bPGLXH2ZHhL2GWmk-4ZI_8/edit?usp=sharing))
+📋 [ВПР]([https://адрес-твоего-сайта.com](https://docs.google.com/document/d/19UnxxxQgUOfXv6jMnDnHOknNeVwdczw3e8ACeJnosAE/edit?usp=sharing))
+🔧 [Практикум]()
+🎬 [Сообщение по фильму](https://docs.google.com/presentation/d/1QqVqHIH6AG33JIq2KMuzPDmqb9FwW4LJ/edit?usp=sharing&ouid=103521075083407352745&rtpof=true&sd=true)
 📂 Новые практические ИИ-модули (Задания 01.01 — 02.03)
 По размеру: Проверяем разрешение через свойства матрицы img.shape. Картинки меньше 150x150px сразу отсекаются, так как на них сложно точно разобрать детали.
 
@@ -180,8 +180,7 @@ erDiagram
 По шаблону: Используем встроенный в OpenCV стандартный файл haarcascade_frontalface_default.xml. Метод detectMultiScale ищет на фото специфические контуры и перепады освещения, характерные для человеческого лица. Duplicated для мобильного приложения.
 
 Главная проблема при тестировании оконных приложений в Docker — отсутствие графической оболочки (X-сервера), из-за чего тесты падают с ошибкой. Чтобы обойти это, в коде используется подмена модулей до их импорта:
-
-Python
+```mermaid
 import sys
 from unittest.mock import MagicMock
 
@@ -189,6 +188,7 @@ sys.modules['_tkinter'] = MagicMock()
 sys.modules['tkinter'] = MagicMock()
 sys.modules['face_recognition'] = MagicMock()
 sys.modules['cv2'] = MagicMock()
+```
 Скрипт перехватывает системный кэш sys.modules и подсовывает заглушки вместо реальных библиотек графики и ИИ. В итоге тесты проверяют логику функций, работу с папками и логи за сотые доли секунды, даже не пытаясь открыть само окно программы.
 
 Для изоляции проекта написан лаконичный Dockerfile:
