@@ -1,0 +1,971 @@
+/* ==========================================================================
+   ЦВЕТОВАЯ ПАЛИТРА И ПОЛУПРОЗРАЧНАЯ КИРПИЧНАЯ ТЕКСТУРА (Снижена до минимума)
+   ========================================================================== */
+:root {
+    --bg-color: #fbf9f3;
+    /* Наложение кирпичной кладки с прозрачностью всего 4% для светлой темы */
+    --bg-image: linear-gradient(rgba(251, 249, 243, 0.96), rgba(251, 249, 243, 0.96)), url('images/wall-Photoroom.png');
+    --text-color: #2c2525;
+    --accent-color: #fcecee;
+    --accent-dark: #b32438;
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --nav-bg: rgba(251, 249, 243, 0.95);
+    --border-color: #ebdcd9;
+    --shadow: 0 10px 30px rgba(179, 36, 56, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+    --transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --mdk-color: #fcedee;
+    --course-color: #fbf1e6;
+}
+
+[data-theme="dark"] {
+    /* Наложение кирпичной кладки с прозрачностью 2% для глубокой темной темы */
+    --bg-color: #060102;
+    --bg-image: linear-gradient(rgba(6, 1, 2, 0.98), rgba(6, 1, 2, 0.98)), url('images/wall-Photoroom.png');
+    --text-color: #f8ebed;
+    --accent-color: #31070e;
+    --accent-dark: #ff334f;
+    /* Яркий контрастный рубиновый неон */
+    --card-bg: rgba(10, 3, 4, 0.98);
+    --nav-bg: rgba(6, 1, 2, 0.98);
+    --border-color: #3d0c12;
+    --shadow: 0 25px 60px rgba(0, 0, 0, 0.95), 0 0 20px rgba(255, 51, 79, 0.15);
+    --mdk-color: #42060f;
+    --course-color: #30130c;
+}
+
+/* ==========================================================================
+   БАЗОВЫЕ СТИЛИ И ИГРОВАЯ АТМОСФЕРА
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: var(--bg-image);
+    background-repeat: repeat;
+    background-size: 350px;
+    color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+.logo strong {
+    font-family: 'Philosopher', 'Cinzel', serif !important;
+    letter-spacing: 1px;
+}
+
+/* Кастомный благородный скроллбар */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 20px;
+    border: 3px solid var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent-dark);
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: var(--nav-bg);
+    backdrop-filter: blur(16px);
+    border-bottom: 2px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 0 15px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-dark);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.theme-toggle-btn {
+    background: var(--accent-color);
+    border: 2px solid var(--border-color);
+    padding: 6px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1) rotate(5deg);
+    border-color: var(--accent-dark);
+    box-shadow: 0 0 10px rgba(179, 36, 56, 0.3);
+}
+
+section {
+    padding: 120px 2rem 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2.4rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    color: var(--text-color);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--accent-dark);
+    margin: 12px auto 0;
+    border-radius: 2px;
+    box-shadow: 0 0 8px var(--accent-dark);
+}
+
+.section-desc {
+    text-align: center;
+    margin-bottom: 3rem;
+    opacity: 0.8;
+    font-size: 1.05rem;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.glass-panel {
+    backdrop-filter: blur(14px) saturate(120%);
+    -webkit-backdrop-filter: blur(14px) saturate(120%);
+    border: 1px solid var(--border-color) !important;
+}
+
+.game-card-effect {
+    perspective: 1000px;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+        box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+        border-color 0.4s ease;
+    transform-style: preserve-3d;
+}
+
+.game-card-effect:hover {
+    transform: translateY(-10px) rotateX(4deg) rotateY(2deg);
+    border-color: var(--accent-dark) !important;
+    box-shadow: 0 25px 45px rgba(179, 36, 56, 0.22), 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Hero & Canvas */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 100px 1rem 50px;
+}
+
+#heroCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.accent-text {
+    color: var(--accent-dark);
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgba(179, 36, 56, 0.2);
+}
+
+.sell-pitch {
+    font-size: 1.05rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: var(--accent-dark);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    margin: 8px;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(179, 36, 56, 0.3);
+}
+
+.cta-btn.secondary {
+    background: transparent;
+    color: var(--text-color);
+    border: 2px solid var(--accent-dark);
+    box-shadow: none;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(179, 36, 56, 0.4);
+}
+
+/* Обо мне */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.about-card h3 {
+    margin-bottom: 1rem;
+    color: var(--accent-dark);
+    font-size: 1.4rem;
+}
+
+/* Навыки */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-category-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--accent-dark);
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 5px;
+}
+
+.skill-category-card ul {
+    list-style-position: inside;
+    padding-left: 5px;
+}
+
+.skill-category-card li {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+/* Проекты */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.dynamic-card h3 {
+    font-size: 1.3rem;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.card-desc {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.card-tech {
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.8rem;
+}
+
+.tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.mdk-badge {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+/* Схема SDLC */
+.sdlc-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: center;
+}
+
+.sdlc-item {
+    flex: 1 1 210px;
+    padding: 1.8rem 1rem;
+    background: var(--card-bg);
+    border-radius: 16px;
+    text-align: center;
+    cursor: help;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    position: relative;
+}
+
+.sdlc-num {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    transition: var(--transition);
+}
+
+.sdlc-item:hover {
+    border-color: var(--accent-dark);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.tooltip {
+    visibility: hidden;
+    position: absolute;
+    bottom: 115%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--card-bg);
+    color: var(--text-color);
+    padding: 1rem;
+    border-radius: 12px;
+    width: 260px;
+    z-index: 10;
+    opacity: 0;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
+    transition: opacity 0.3s ease, bottom 0.3s ease;
+}
+
+.tooltip small {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--accent-dark);
+    font-weight: 600;
+}
+
+.sdlc-item:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    bottom: 125%;
+}
+
+/* ==========================================================================
+   ИИ-ДЕМОНСТРАЦИОННЫЕ ИНТЕРФЕЙСЫ
+   ========================================================================== */
+.ai-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.ai-zone {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.ai-input,
+.ai-textarea {
+    width: 100%;
+    background: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+.ai-textarea {
+    height: 100px;
+}
+
+.ai-input:focus,
+.ai-textarea:focus {
+    border-color: var(--accent-dark);
+}
+
+.ai-btn {
+    background: var(--accent-dark);
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(179, 36, 56, 0.2);
+}
+
+.ai-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+.verdict-box {
+    background: var(--bg-color);
+    border: 1px dashed var(--border-color);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.proba-row {
+    display: flex;
+    align-items: center;
+    margin: 6px 0;
+    font-size: 0.9rem;
+}
+
+.proba-label {
+    width: 110px;
+}
+
+.proba-bar-container {
+    flex-grow: 1;
+    background: var(--bg-color);
+    height: 8px;
+    border-radius: 4px;
+    margin: 0 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.proba-bar-fill {
+    height: 100%;
+    background: var(--accent-dark);
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+.proba-percent {
+    width: 45px;
+    text-align: right;
+    font-family: monospace;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) all;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   РАСШИРЕННЫЙ САЙДБАР (image_b7e327.jpg) И РЫЦАРЬ
+   ========================================================================== */
+.github-layout {
+    display: grid;
+    /* Расширили колонку сайдбара с 280px до 320px для идеального выравнивания текста */
+    grid-template-columns: 320px 1fr;
+    gap: 2.5rem;
+    max-width: 1100px;
+    width: 100%;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.github-sidebar {
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+.avatar-wrapper {
+    width: 250px;
+    /* Сделали аватарку пропорционально чуть больше под новый размер */
+    height: 250px;
+    margin: 0 auto 1.5rem;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid var(--border-color);
+    transition: var(--transition);
+    box-shadow: 0 0 30px rgba(179, 36, 56, 0.5), 0 0 60px rgba(179, 36, 56, 0.2);
+}
+
+[data-theme="dark"] .avatar-wrapper {
+    border-color: var(--accent-dark);
+    box-shadow: 0 0 35px rgba(217, 56, 79, 0.85), 0 0 70px rgba(217, 56, 79, 0.4);
+}
+
+.github-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sidebar-info h2 {
+    text-align: left;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.sidebar-info h2::after {
+    display: none;
+}
+
+.nickname {
+    font-size: 1.1rem;
+    opacity: 0.6;
+    margin-bottom: 1rem;
+}
+
+/* Идеальное выравнивание и аккуратный зазор для текста описания */
+.bio {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+    text-align: justify;
+}
+
+.sidebar-divider {
+    border: 0;
+    height: 1px;
+    background: var(--border-color);
+    margin: 1.2rem 0;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.meta-icon {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.meta-text,
+.meta-link {
+    color: var(--text-color);
+    opacity: 0.95;
+    text-decoration: none;
+    line-height: 1.4;
+}
+
+.meta-link:hover {
+    color: var(--accent-dark);
+    text-decoration: underline;
+}
+
+/* Виджет рыцаря в сайдбаре */
+.knight-sidebar-container {
+    margin-top: 25px;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.04);
+    border: 1px dashed var(--border-color);
+    border-radius: 12px;
+    text-align: center;
+}
+
+[data-theme="dark"] .knight-sidebar-container {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.knight-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    opacity: 0.7;
+    font-weight: bold;
+}
+
+.knight-gif-sidebar {
+    width: 100%;
+    max-height: 140px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: var(--shadow);
+}
+
+.github-content {
+    display: flex;
+    align-items: center;
+}
+
+.welcome-box {
+    padding: 3rem;
+    border-radius: 20px;
+    width: 100%;
+    box-shadow: var(--shadow);
+}
+
+.welcome-box h1 {
+    font-size: 2.3rem;
+    margin: 10px 0 5px;
+}
+
+.cta-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 1.5rem;
+}
+
+/* ==========================================================================
+   ВКЛАДКА СЕРТИФИКАТОВ: 4 КУРСА В РЯД (Два ряда)
+   ========================================================================== */
+.certificates-grid {
+    display: grid;
+    /* Монолитная сетка по 4 карточки в ряд */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* Адаптивное схлопывание сетки сертификатов для планшетов и телефонов */
+@media (max-width: 1200px) {
+    .certificates-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .certificates-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.cert-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.cert-date {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent-dark);
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   УНИВЕРСАЛЬНЫЙ КЛАСС УВЕЛИЧЕНИЯ ИЗОБРАЖЕНИЙ (Скриншоты и Сертификаты)
+   ========================================================================== */
+.zoom-img-container {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: rgba(0, 0, 0, 0.03);
+    cursor: zoom-in;
+    /* Лупа при наведении */
+}
+
+.zoom-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+    display: block;
+}
+
+/* Персональный стиль для больших скриншотов программ в секции ИИ, чтобы они не обрезались */
+.text-image-style {
+    max-height: 280px;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.cert-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(179, 36, 56, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    opacity: 0;
+    transition: var(--transition);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.zoom-img-container:hover .zoom-thumbnail {
+    transform: scale(1.03);
+}
+
+.zoom-img-container:hover .cert-overlay {
+    opacity: 1;
+}
+
+.cert-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.cert-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(179, 36, 56, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.cert-img-container:hover .cert-thumbnail {
+    transform: scale(1.05);
+}
+
+.cert-img-container:hover .cert-overlay {
+    opacity: 1;
+}
+
+.cert-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 80px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 85%;
+    max-height: 75vh;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: zoomIn 0.3s ease;
+}
+
+#modalCaption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 15px 0;
+    font-size: 1.2rem;
+}
+
+.modal-close {
+    position: absolute;
+    top: 30px;
+    right: 45px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: var(--accent-dark);
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.practice-box-layout {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 2rem;
+    padding: 2.5rem;
+    border-radius: 16px;
+    border-left: 4px solid var(--accent-dark) !important;
+}
+
+.practice-logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 12px;
+    border: 1px dashed var(--border-color);
+    padding: 10px;
+}
+
+.company-logo-img {
+    max-width: 100%;
+    max-height: 120px;
+    object-fit: contain;
+}
+
+footer {
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--border-color);
+    background: var(--card-bg);
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.sub-text {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+.footer-contacts a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.footer-contacts a:hover {
+    color: var(--accent-dark);
+}
+
+@media (max-width: 900px) {
+    .github-layout {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .sidebar-info h2 {
+        text-align: center;
+    }
+
+    .meta-item {
+        justify-content: center;
+    }
+
+    .cta-group {
+        justify-content: center;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .ai-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .practice-box-layout {
+        grid-template-columns: 1fr;
+    }
+}

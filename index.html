@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Умрихина Кристина — Портфолио & Резюме</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Comfortaa:wght@500;700&family=Philosopher:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-theme="light">
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="images/logo.png" alt="Логотип" style="height: 64px; display: block;">
+            </div>
+            <nav class="nav-links">
+                <a href="#hero">Главная</a>
+                <a href="#about">Обо мне</a>
+                <a href="#skills">Навыки</a>
+                <a href="#projects">Проекты</a>
+                <a href="#certificates">Сертификаты</a>
+                <a href="#practice">Практика</a>
+                <a href="#sdlc">SDLC</a>
+                <a href="#ai-hub">Результаты заданий ИИ</a>
+            </nav>
+            <button class="theme-toggle-btn" id="themeToggle" title="Переключить тему">
+                <span id="themeIcon" style="font-size: 20px;">☀️</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="hero">
+            <canvas id="heroCanvas"></canvas>
+            <div class="github-layout reveal">
+
+                <div class="github-sidebar glass-panel">
+                    <div class="avatar-wrapper">
+                        <img src="images/me.png" alt="Умрихина Кристина Александровна" class="github-avatar">
+                    </div>
+                    <div class="sidebar-info">
+                        <h2>Кристина</h2>
+                        <p class="nickname">Meminttaa</p>
+                        <p class="bio">Специализируюсь на создании масштабируемых веб-приложений, проектировании
+                            реляционных баз данных и интеграции модулей компьютерного зрения.</p>
+
+                        <hr class="sidebar-divider">
+
+                        <div class="meta-item">
+                            <span class="meta-icon">🏢</span>
+                            <span class="meta-text">ГБПОУ МО «Люберецкий техникум имени Ю.А. Гагарина»</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">📍</span>
+                            <span class="meta-text">Угреша</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">📞</span>
+                            <a href="tel:+79035105329" class="meta-link">+7 (903) 510-53-29</a>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-icon">✉️</span>
+                            <a href="mailto:kumrikhina317@gmail.com" class="meta-link">kumrikhina317@gmail.com</a>
+                        </div>
+
+                        <div class="knight-sidebar-container">
+                            <p class="knight-title">SYSTEM APPROVED</p>
+                            <img src="images/knight_ok_GIF.gif" alt="Рыцарь" class="knight-gif-sidebar">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="github-content">
+                    <div class="welcome-box glass-panel">
+                        <div style="text-align: left; margin-bottom: 10px;">
+                            <img src="images/Pixel_Text_GIF.gif" alt="Welcome"
+                                style="height: 35px; image-rendering: pixelated;">
+                        </div>
+                        <h1>Умрихина Кристина Александровна</h1>
+                        <h3 class="accent-text">Программист & Разработчик бэкенда</h3>
+                        <p class="sell-pitch">Приветствую! Я разрабатываю чистую архитектуру серверных приложений на
+                            Python, настраиваю реляционные базы данных и автоматизирую интранет-сервисы с интеграцией
+                            ML-компонентов.</p>
+                        <div class="cta-group">
+                            <a href="#ai-hub" class="cta-btn">Результаты заданий ИИ</a>
+                            <a href="https://github.com/Meminttaa" target="_blank" class="cta-btn secondary">Мой
+                                GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="reveal">
+            <h2>Обо мне</h2>
+            <div class="about-grid">
+                <div class="about-card glass-panel game-card-effect">
+                    <h3>Образование</h3>
+                    <p>Студентка 3-го курса. Специальность «Информационные системы и программирование» в ГБПОУ МО
+                        «Люберецкий техникум имени Ю.А. Гагарина». Углубленная подготовка в области проектирования
+                        архитектуры ПО, развертывания компьютерных сетей и информационной безопасности.</p>
+                </div>
+                <div class="about-card glass-panel game-card-effect">
+                    <h3>Профессиональный вектор</h3>
+                    <p>Фокусируюсь на бэкенд-разработке (Python/Django/FastAPI), интеграции интеллектуальных решений
+                        (Face Recognition, Sentiment Analysis) и системном администрировании Linux сред.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="reveal">
+            <h2>Технический стек</h2>
+            <div class="skills-container" id="skillsGrid"></div>
+        </section>
+
+        <section id="projects" class="reveal">
+            <h2>Проекты и Разработки</h2>
+            <div class="projects-grid" id="projectsGrid"></div>
+        </section>
+
+        <section id="certificates" class="reveal">
+            <h2>Сертификаты и Достижения</h2>
+            <p class="section-desc">Документы, подтверждающие прохождение профильного обучения и независимую
+                квалификацию (нажмите для увеличения):</p>
+            <div class="certificates-grid">
+
+                <div class="card cert-card glass-panel game-card-effect">
+                    <div class="zoom-img-container">
+                        <img src="images/certificat_5.jpg" alt="Яндекс Лицей Go" class="zoom-thumbnail">
+                        <div class="cert-overlay"><span>🔍 Нажмите для увеличения</span></div>
+                    </div>
+                    <span class="cert-date">21.05.2026 г.</span>
+                    <h3>Яндекс Лицей: «Go-1: шаг за шагом»</h3>
+                    <p><strong>АНО ДПО «Образовательные технологии Яндекса».</strong> Интенсивный самостоятельный курс
+                        по изучению высокопроизводительного компилируемого языка Go.</p>
+                </div>
+
+                <div class="card cert-card glass-panel game-card-effect">
+                    <div class="zoom-img-container">
+                        <img src="images/certificat_8.png" alt="Конференция 1С" class="zoom-thumbnail">
+                        <div class="cert-overlay"><span>🔍 Нажмите для увеличения</span></div>
+                    </div>
+                    <span class="cert-date">03-04.02.2026 г.</span>
+                    <h3>XXVI Международная конференция «1С»</h3>
+                    <p><strong>Фирма «1С» / ВШЭ / МФТИ / МГТУ им. Баумана.</strong> Свидетельство об участии в секциях
+                        по технологиям формирования ИТ-компетенций будущего.</p>
+                </div>
+
+                <div class="card cert-card glass-panel game-card-effect">
+                    <div class="zoom-img-container">
+                        <img src="images/certificat_6.png" alt="Поколение Python" class="zoom-thumbnail">
+                        <div class="cert-overlay"><span>🔍 Нажмите для увеличения</span></div>
+                    </div>
+                    <span class="cert-date">09.12.2025 г.</span>
+                    <h3>«Поколение Python»: курс для начинающих</h3>
+                    <p><strong>Школа BEEGEEK / Stepik.</strong> Сертификат с отличием за успешное освоение базовых
+                        структур данных (Результат: 83%).</p>
+                </div>
+
+                <div class="card cert-card glass-panel game-card-effect">
+                    <div class="zoom-img-container">
+                        <img src="images/certificat_2.png" alt="Cloud Computing" class="zoom-thumbnail">
+                        <div class="cert-overlay"><span>🔍 Нажмите для увеличения</span></div>
+                    </div>
+                    <span class="cert-date">26.11.2025 г.</span>
+                    <h3>Yandex Cloud: «Cloud Computing»</h3>
+                    <p><strong>Yandex Cloud Training & Certification.</strong> Подтверждение прохождения курса по
+                        архитектуре облачных вычислений.</p>
+                </div>
+
+                <div class="card cert-card glass-panel game-card-effect">
+                    <div class="zoom-img-container">
+                        <img src="images/certificat_1.png" alt="Docker Контейнеризация" class="zoom-thumbnail">
+                        <div class="cert-overlay"><span>🔍 Нажмите для увеличения</span></div>
+                    </div>
+                    <span class="cert-date">17.11.2025 г.</span>
+                    <h3>Yandex Cloud: «Контейнеризация с Docker»</h3>
+                    <p><strong>Yandex Cloud Training & Certification.</strong> Практическое свидетельство об успешном
+                        освоении контейнерных сред.</p>
+                </div>
+
+                <div class="card cert-card glass-panel game-card-effect">
+                    <div class="zoom-img-container">
+                        <img src="images/certificat_3.png" alt="Основы Git и GitHub" class="zoom-thumbnail">
+                        <div class="cert-overlay"><span>🔍 Нажмите для увеличения</span></div>
+                    </div>
+                    <span class="cert-date">12.11.2025 г.</span>
+                    <h3>Основы Git и GitHub</h3>
+                    <p><strong>Образовательная платформа Stepik.</strong> Сертификат с отличием за абсолютный результат
+                        (100%) в управлении репозиториями.</p>
+                </div>
+
+                <div class="card cert-card glass-panel game-card-effect">
+                    <div class="zoom-img-container">
+                        <img src="images/certificat_7.png" alt="Азбука Python" class="zoom-thumbnail">
+                        <div class="cert-overlay"><span>🔍 Нажмите для увеличения</span></div>
+                    </div>
+                    <span class="cert-date">2024 г.</span>
+                    <h3>Код Будущего: «Азбука Python»</h3>
+                    <p><strong>Минцифры России / ФГБОУ ВО УУНиТ.</strong> Сертификат об успешном освоении курса в объеме
+                        144 академических часов.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="practice" class="reveal">
+            <h2>Производственная практика</h2>
+            <div class="practice-box-layout glass-panel">
+                <div class="practice-box">
+                    <h3>Стажировка в ООО «Альфа» (IP-Home)</h3>
+                    <p class="date-tag">Июнь 2026</p>
+                    <p>В рамках прохождения учебной и производственной практики выполнялось развертывание и
+                        сопровождение локальных интранет-сервисов, оптимизация SQL-запросов к СУБД PostgreSQL и
+                        настройка контейнеризации веб-интерфейсов через Docker.</p>
+                    <p>Дополнительно прорабатывались вопросы обеспечения безопасности данных и соответствия
+                        архитектурных решений базовым регламентам ФСТЭК.</p>
+                    <div class="tags">
+                        <span class="tag">CI/CD</span>
+                        <span class="tag">Linux Bash</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Безопасность</span>
+                    </div>
+                </div>
+                <div class="practice-logo-container">
+                    <img src="images/ip_home.png" alt="IP-Home" class="company-logo-img">
+                </div>
+            </div>
+        </section>
+
+        <section id="sdlc" class="reveal">
+            <h2>Жизненный цикл ПО (SDLC)</h2>
+            <p class="section-desc">Понимание этапов разработки и practical применение инструментария на каждой стадии:
+            </p>
+            <div class="sdlc-wrapper" id="sdlcGrid"></div>
+        </section>
+
+        <div style="text-align: center; margin: 5rem 0 2rem; position: relative;">
+            <p
+                style="font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 2px; opacity: 0.6; margin-bottom: 10px;">
+                ПРИВАЛ РАЗРАБОТЧИКА (REST ZONE)</p>
+            <img src="images/gif.gif" alt="Костер"
+                style="height: 60px; image-rendering: pixelated; filter: drop-shadow(0 0 15px rgba(179,36,56,0.3));">
+            <div
+                style="width: 150px; height: 1px; background: linear-gradient(to right, transparent, var(--accent-dark), transparent); margin: 10px auto 0;">
+            </div>
+        </div>
+
+        <section id="ai-hub" class="reveal">
+            <h2>Галерея результатов запущенных проектов (МДК 02.03, 01.01 & 12.01)</h2>
+            <p class="section-desc">Кликните на любой скриншот программы ниже, чтобы открыть его в полном разрешении и
+                детально изучить:</p>
+
+            <div class="ai-grid" style="grid-template-columns: 1fr;">
+
+                <div class="card glass-panel game-card-effect"
+                    style="border: 2px solid var(--accent-dark) !important; background: rgba(179,36,56,0.02);">
+                    <h3 style="color: var(--accent-dark);">🛡️ Главное условие допуска к экзамену (Программа
+                        распознавания лиц)</h3>
+                    <blockquote
+                        style="margin: 10px 0; padding-left: 15px; border-left: 3px solid var(--accent-dark); font-style: italic; opacity: 0.9;">
+                        «Для допуска к экзамену должна быть программа, которая распознает вас на фото. Фото загруженное
+                        в программу должно писать имя человека, который изображен на фото. Программа может быть 1 на всю
+                        группу. Она должна писать имя каждого человека, который изображен на фото».
+                    </blockquote>
+
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-top: 15px;">
+                        <div>
+                            <p><strong>Результат тестирования алгоритма:</strong> Локальный Python-скрипт десктопного
+                                приложения на базе библиотеки dlib успешно выполняет сканирование загруженной групповой
+                                фотографии, сопоставляет параметры лица с базой данных датасета и выводит окно
+                                результатов с рамками детекции.</p>
+                        </div>
+                        <div class="zoom-img-container">
+                            <img src="images/desktop_recognition_app.png"
+                                alt="Допуск к экзамену - Программа распознавания лиц группы"
+                                class="zoom-thumbnail text-image-style">
+                            <div class="cert-overlay"><span>🔍 Увеличить скриншот</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 2rem; margin-top: 1rem;">
+
+                    <div class="card glass-panel game-card-effect">
+                        <h3>01.01. Настольное приложение + нейронка для распознавания картинок</h3>
+                        <p class="card-desc">Фильтрация изображений по габаритам (размеру), цветовой палитре (перевод в
+                            Grayscale / оттенки серого) и шаблону ключевых контуров человеческого лица.</p>
+                        <div class="zoom-img-container">
+                            <img src="images/desktop_filter_grayscale.png"
+                                alt="01.01 Фильтрация по размеру, цвету Grayscale и шаблону лица"
+                                class="zoom-thumbnail text-image-style">
+                            <div class="cert-overlay"><span>🔍 Увеличить скриншот</span></div>
+                        </div>
+                    </div>
+
+                    <div class="card glass-panel game-card-effect">
+                        <h3>01.02. Использовать готовую библиотеку для модульных тестов</h3>
+                        <p class="card-desc">Покрытие исходного кода тестами встроенной библиотеки Unittest с
+                            применением MagicMock для изоляции GUI-компонентов и мгновенной проверки логов терминала.
+                        </p>
+                        <div class="zoom-img-container">
+                            <img src="images/unit_tests_passed.png"
+                                alt="01.02 Успешный прогон модульных тестов Unittest"
+                                class="zoom-thumbnail text-image-style">
+                            <div class="cert-overlay"><span>🔍 Увеличить скриншот</span></div>
+                        </div>
+                    </div>
+
+                    <div class="card glass-panel game-card-effect">
+                        <h3>01.03. Мобильное приложение (содержание как в настольном)</h3>
+                        <p class="card-desc">Кроссплатформенное мобильное приложение на фреймворке Kivy, полностью
+                            реализующее алгоритмы фильтрации размера, цвета и каскадов Хаара на экране смартфона.</p>
+                        <div class="zoom-img-container">
+                            <img src="images/mobile_app_interface.png" alt="01.03 Интерфейс мобильного приложения Kivy"
+                                class="zoom-thumbnail text-image-style">
+                            <div class="cert-overlay"><span>🔍 Увеличить скриншот</span></div>
+                        </div>
+                    </div>
+
+                    <div class="card glass-panel game-card-effect">
+                        <h3>01.04. Работа с Docker</h3>
+                        <p class="card-desc">Сборка образов, контейнеризация ИИ-модулей и автоматический запуск тестов
+                            внутри изолированного контейнера. Мониторинг слоев через графическую среду Docker Desktop.
+                        </p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                            <div class="zoom-img-container">
+                                <img src="images/docker_build.png" alt="01.04 Лог сборки образа docker build"
+                                    class="zoom-thumbnail text-image-style">
+                                <div class="cert-overlay"><span>🔍 Увеличить</span></div>
+                            </div>
+                            <div class="zoom-img-container">
+                                <img src="images/docker_run_tests.png" alt="01.04 Запуск тестов через docker run"
+                                    class="zoom-thumbnail text-image-style">
+                                <div class="cert-overlay"><span>🔍 Увеличить</span></div>
+                            </div>
+                        </div>
+                        <div class="zoom-img-container">
+                            <img src="images/docker_desktop_image.png"
+                                alt="01.04 Образ в панели управления Docker Desktop"
+                                class="zoom-thumbnail text-image-style">
+                            <div class="cert-overlay"><span>🔍 Увеличить скриншот</span></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 2rem; margin-top: 1rem;">
+
+                    <div class="card glass-panel game-card-effect">
+                        <h3>02.01. Сайт-резюме</h3>
+                        <p class="card-desc">Разработка структуры, сеток, адаптивной темизации и интерактивных
+                            canvas-анимаций для статического веб-портфолио разработчика бэкенда.</p>
+                        <div class="zoom-img-container">
+                            <img src="images/django_about_skills.png"
+                                alt="02.01 Разработка структуры и макета сайта-резюме"
+                                class="zoom-thumbnail text-image-style">
+                            <div class="cert-overlay"><span>🔍 Увеличить скриншот</span></div>
+                        </div>
+                    </div>
+
+                    <div class="card glass-panel game-card-effect">
+                        <h3>02.02. Диаграмма EML (ERD реляционной базы данных)</h3>
+                        <p class="card-desc">Построение схемы базы данных в Draw.io: таблицы связей ResumeProfile,
+                            Skills, Students и RecognitionLogs с распределением типов данных и внешних ключей.</p>
+                        <div class="zoom-img-container">
+                            <img src="images/database_eer_diagram.png"
+                                alt="02.02 Схема реляционной структуры БД в Draw.io"
+                                class="zoom-thumbnail text-image-style">
+                            <div class="cert-overlay"><span>🔍 Увеличить скриншот</span></div>
+                        </div>
+                    </div>
+
+                    <div class="card glass-panel game-card-effect" style="grid-column: span 2;">
+                        <h3>02.03. Обучение нейронки на тексте</h3>
+                        <p class="card-desc">Классификатор тональности текста на алгоритме Наивного Байеса. На
+                            скриншотах продемонстрирован вывод процентных вероятностей классов и работа модуля
+                            динамического переобучения ИИ.</p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                            <div class="zoom-img-container">
+                                <img src="images/text_sentiment_analysis.png"
+                                    alt="02.03 Результат анализа тональности текста ИИ"
+                                    class="zoom-thumbnail text-image-style">
+                                <div class="cert-overlay"><span>🔍 Увеличить</span></div>
+                            </div>
+                            <div class="zoom-img-container">
+                                <img src="images/text_ai_retrain.png" alt="02.03 Модуль асинхронного дообучения модели"
+                                    class="zoom-thumbnail text-image-style">
+                                <div class="cert-overlay"><span>🔍 Увеличить</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card glass-panel game-card-effect" style="grid-column: span 2;">
+                        <h3>12.01. Сайт на Джанго и Фаст Апи, использование асинхронности и Постгре</h3>
+                        <p class="card-desc">Развертывание распределенной веб-системы: Django осуществляет менеджмент
+                            контента, асинхронный FastAPI-сервер параллельно обрабатывает ИИ-запросы dlib, а СУБД
+                            PostgreSQL логирует операции.</p>
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px;">
+                            <div class="zoom-img-container"><img src="images/django_skills_devops.png"
+                                    alt="12.01 Панель навыков и DevOps среды" class="zoom-thumbnail">
+                                <div class="cert-overlay"><span>🔍</span></div>
+                            </div>
+                            <div class="zoom-img-container"><img src="images/django_projects_grid.png"
+                                    alt="12.01 Сетка разработанных проектов" class="zoom-thumbnail">
+                                <div class="cert-overlay"><span>🔍</span></div>
+                            </div>
+                            <div class="zoom-img-container"><img src="images/django_practice_box.png"
+                                    alt="12.01 Раздел отчета по практике" class="zoom-thumbnail">
+                                <div class="cert-overlay"><span>🔍</span></div>
+                            </div>
+                            <div class="zoom-img-container"><img src="images/django_sdlc_rest.png"
+                                    alt="12.01 Виджет этапов SDLC" class="zoom-thumbnail">
+                                <div class="cert-overlay"><span>🔍</span></div>
+                            </div>
+                            <div class="zoom-img-container"><img src="images/django_ai_hub_top.png"
+                                    alt="12.01 Интерактивные формы ИИ-сервера" class="zoom-thumbnail">
+                                <div class="cert-overlay"><span>🔍</span></div>
+                            </div>
+                            <div class="zoom-img-container"><img src="images/django_footer.png"
+                                    alt="12.01 Подвал веб-страницы и футер" class="zoom-thumbnail">
+                                <div class="cert-overlay"><span>🔍</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>© 2026 Умрихина Кристина Александровна</p>
+                <p class="sub-text">Специальность «Информационные системы и программирование»</p>
+            </div>
+            <div style="text-align: center; margin: 10px 0;">
+                <img src="images/Pixel_Text_GIF_(1).gif" alt="Goodbye"
+                    style="height: 30px; image-rendering: pixelated;">
+            </div>
+            <div class="footer-contacts">
+                <a href="mailto:kumrikhina317@gmail.com">kumrikhina317@gmail.com</a>
+                <a href="tel:+79035105329">+7 (903) 510-53-29</a>
+                <a href="https://github.com/Meminttaa" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <div id="certModal" class="modal"
+        style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); overflow: auto; backdrop-filter: blur(8px);">
+        <span class="modal-close"
+            style="position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; transition: 0.3s; user-select: none;">&times;</span>
+        <div
+            style="margin: auto; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 40px;">
+            <img class="modal-content" id="modalTargetImg"
+                style="max-width: 95%; max-height: 85vh; border-radius: 8px; box-shadow: 0 0 30px rgba(0,0,0,0.7); border: 1px solid rgba(255,255,255,0.1);">
+            <div id="modalCaption"
+                style="margin-top: 18px; color: #fff; font-family: 'Comfortaa', sans-serif; font-size: 1.15rem; text-align: center; text-shadow: 0 2px 4px rgba(0,0,0,0.8); background: rgba(0,0,0,0.6); padding: 8px 16px; border-radius: 20px;">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
